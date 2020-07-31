@@ -1,0 +1,34 @@
+<% include partials/header %>
+
+	<div class="container">
+		<div class = "jumbotron">
+			<h1> Stories </h1>
+		</div>
+
+<%  allStories.forEach(function(story){ %>
+ <section>
+  <div class="container" >
+    <div class="card">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card-block">
+            <h6 class="card-title"> <%=story.topic%> </h6>
+            <h4 class="card-title"> <%= story.title %>  </h4>
+            <p class="card-text"> <%= story.description%></p>
+            <h6> By - <%= story.author%> </h6>
+            <a href="/<%= story._id %>" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-img-bottom">
+            <img src=" <%=story.image%> " class="img-thumbnail">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% }); %>
+
+<% include partials/footer %>
